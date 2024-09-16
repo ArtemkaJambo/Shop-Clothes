@@ -1,0 +1,91 @@
+.header {
+    display: flex;
+    align-items: center;
+    padding: 20px 90px;
+    justify-content: space-between;
+    border: 1px solid lightgrey;
+    position: fixed;
+    background-color: rgba(253, 250, 250, 0.8);
+    backdrop-filter: blur(5px);
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+.header h1 {
+    cursor: pointer;
+
+}
+.headerList {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+}
+
+.catalog::after {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    margin-left: 10px;
+    transform: rotate(225deg); 
+    transition: transform 0.3s;
+}
+.catalog:hover::after {
+   transform: rotate(45deg);
+}
+
+.catalog {
+    position: relative;
+    /* display: inline-block; */
+}
+
+.catalogClothes {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 10px;
+    list-style: none;
+}
+
+.catalog:hover .catalogClothes {
+    display: block;
+}
+
+.catalogClothes li {
+    padding: 10px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+}
+.catalogClothes li img {
+    height: 50px;
+    width: 50px;
+}
+
+.catalogClothes li {
+    text-decoration: none;
+    color: black;
+}
+.headerList li {
+    list-style-type: none;
+    cursor: pointer;
+}
+.icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.hippo {
+    font-size: 32px;
+}

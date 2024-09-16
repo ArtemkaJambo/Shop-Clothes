@@ -1,0 +1,16 @@
+.hoody {
+    margin-top: 100px;
+    margin-right: 10%;
+    margin-left: 10%;
+    text-align: center;
+}
+.hoody h1 {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+.hoodyContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 400px);
+    gap: 50px;
+}

@@ -1,0 +1,56 @@
+.policy {
+    display: flex;
+}
+.articles {
+    margin-top: 100px;
+    margin-left: 50px;
+}
+p {
+    margin-bottom: 5px;
+}
+.navigation {
+    margin-left: 50px;
+    margin-top: 140px;
+    font-size: 14px;
+    color: black;
+}
+.navigation p {
+    width: 200px;
+    margin-bottom: 10px;
+}
+.policy h1 {
+    font-weight: 300;
+    font-size: 28px;
+}
+.mainPolicy p {
+    margin-left: 30px;
+    font-size: 14px;
+    font-weight: 200;
+}
+.firstStatement h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+.firstStatement p {
+    font-size: 14px;
+    margin-left: 30px;
+} 
+.secondStatement h4 {
+    font-size: 16px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.secondStatement p {
+    margin-left: 30px;
+    font-size: 14px;
+}
+.thirdStatement h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+.thirdStatement p {
+    margin-left: 30px;
+    font-size: 14px;
+}

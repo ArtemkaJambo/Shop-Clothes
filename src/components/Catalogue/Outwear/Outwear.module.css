@@ -1,0 +1,16 @@
+.outwear {
+    margin-top: 100px;
+    margin-right: 10%;
+    margin-left: 10%;
+    text-align: center;
+}
+.outwear h1 {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+.outwearContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 400px);
+    gap: 50px;
+}

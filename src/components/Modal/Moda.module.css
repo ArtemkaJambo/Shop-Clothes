@@ -1,0 +1,105 @@
+ .modalScreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7); 
+    width: 100vw;  
+    height: 100vh;
+    position: fixed;
+    top: 417%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    z-index: 1000; 
+    transition:0.6;
+}
+
+.modalContent {
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+    width: 550px;
+    height: 350px;
+    border-radius: 10px;
+} 
+
+.inputs {
+    margin-top: 30px;
+
+}
+.inputItem {
+    display: flex;
+    align-items: center;
+    font-weight: 200;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.inputItem p {
+    font-family: "Montserrat", sans-serif;
+
+}
+.inputItem input {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    padding: 7px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid grey;
+    font-family: "Montserrat", sans-serif;
+    width: 230px;
+}
+.inputItem input:focus {
+    border-bottom: 1px solid black;
+}
+.register {
+    display: flex;
+    margin-left: 60px;
+    gap: 10px;
+}
+.register button  {
+    padding: 10px 20px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+.activeSignIn {
+    position: relative;
+}
+.activeSignIn::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px; 
+    width: 100%;
+    height: 1px; 
+    background-color: black; 
+}
+
+.btnRegister {
+    margin-top: 30px;
+    padding: 10px 30px;
+    color: white;
+    font-weight: 600;
+    background-color: black;
+    border: none;
+    cursor: pointer;
+}
+
+
+.errorInput {
+    border: 1px solid red;
+  }
+  
+.errorText {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    position: absolute;
+}
+.closeModal {
+    font-size: 24px;
+    position: relative;
+    left: 230px;
+    cursor: pointer;
+}

@@ -1,0 +1,44 @@
+.navigation {
+    margin-left: 50px;
+    margin-top: 140px;
+    font-size: 14px;
+    color: black;
+}
+.navigation p {
+    width: 200px;
+    margin-bottom: 10px;
+}
+.exchange {
+    display: flex;
+
+}
+.acticles {
+    margin-top: 100px;
+    margin-left: 50px;
+}
+.acticles h1 {
+    margin-bottom: 50px;
+}
+.firstStatement {
+    margin-bottom: 20px;
+}
+.firstStatement p {
+    font-size: 14px;
+    margin-left: 30px;
+}
+.secondStatement {
+    margin-left: 30px;
+}
+.secondStatement h4 {
+    margin-bottom: 20px;
+}
+.secondStatement .saveConditions {
+    margin-left: 20px;
+}
+.saveConditions:hover {
+    color: black;
+    cursor: auto;
+}
+.secondStatement ul {
+    margin-bottom: 40px;
+}

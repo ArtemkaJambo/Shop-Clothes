@@ -1,0 +1,11 @@
+p {
+    padding: 2px;
+    font-size: 13px;
+}
+
+.active p {
+    background-color: #f1f1f1;
+    /* padding: 0 10px; */
+    border-radius: 4px;
+}
+
