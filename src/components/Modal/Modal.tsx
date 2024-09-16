@@ -49,17 +49,14 @@ const Modal: React.FC<ModalProps> = ({ modal, setModal }) => {
     }  
 
   function checkSignInInputs() {
-    let isCorrect = true
 
     if (!passwordSignIn) {
       setPasswordSignInError('Пароль обов\'язковий')
-      isCorrect = false
 
     }
     
     if (!emailSignIn) {
       setEmailSignInError('Е-Пошта обов\'язкова')
-      isCorrect = false
     }
 
     if (emailSignIn && passwordSignIn) {
@@ -68,20 +65,16 @@ const Modal: React.FC<ModalProps> = ({ modal, setModal }) => {
   }
 
   function checkCorrentInput() {
-    let isCorrect = true
 
     if (!fullname) {
       setFullnameError('Ім\'я та прізвище обов\'язкові')
-      isCorrect = false
     }
     if (!email) {
       setEmailError('Е-Пошта обов\'язкова')
-      isCorrect = false
 
     }
     if (!password) {
       setPasswordError('Пароль обов\'язковий')
-      isCorrect = false
     }
     
     if (fullname && email && password) {
