@@ -58,31 +58,31 @@ export const productOutwear: Product[] = [
 
 export const productsHoody: Product[] = [
     {
-        id: 1,
+        id: 6,
         name: 'Червоне Худі',
         img: hoody1,
         price: 950,
     },
     {
-        id: 2,
+        id: 7,
         name: 'Чорне Худі',
         img: hoody2,
         price: 950,
     },
     {
-        id: 3,
+        id: 8,
         name: 'Зелене Худі',
         img: hoody3,
         price: 990,
     },
     {
-        id: 4,
+        id: 9,
         name: 'Сіре Худі',
         img: hoody4,
         price: 1100,
     },
     {
-        id: 5,
+        id: 10,
         name: 'Худі "Восьминіг"',
         img: hoody5,
         price: 1449,
@@ -91,19 +91,19 @@ export const productsHoody: Product[] = [
 ];
 export const productsTrousers: Product[] = [
     {
-        id: 1,
+        id: 11,
         name: 'Штани Карго',
         img: trousers1,
         price: 1149,
     },
     {
-        id: 2,
+        id: 12,
         name: 'Джинси',
         img: trousers2,
         price: 1249,
     },
     {
-        id: 3,
+        id: 13,
         name: 'Штани Вільного Крою ',
         img: trousers3,
         price: 950,
@@ -112,25 +112,25 @@ export const productsTrousers: Product[] = [
 ];
 export const productsTShirts: Product[] = [
     {
-        id: 1,
+        id: 14,
         name: 'Чорна Футболка',
         img: tShirt1,
         price: 499,
     },
     {
-        id: 2,
+        id: 15,
         name: 'Червона Футболка',
         img: tShirt2,
         price: 599,
     },
     {
-        id: 3,
+        id: 16,
         name: 'Біла Футболка',
         img: tShirt3,
         price: 499,
     },
     {
-        id: 4,
+        id: 17,
         name: 'Зелена Футболка',
         img: tShirt4,
         price: 749,

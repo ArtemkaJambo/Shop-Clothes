@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useState} from "react"
-import { productsHoody, productsTShirts, productsTrousers } from "../../products";
+import { productOutwear, productsHoody, productsTShirts, productsTrousers } from "../../products";
 
 interface ShopContextProps {
     addToCart: (itemId: number) => void;
@@ -26,7 +26,7 @@ function getDefaultItem(allProducts: any) {
   return cart
 }
 
-const allProducts = [...productsHoody, ...productsTShirts, ...productsTrousers]
+const allProducts = [...productsHoody, ...productsTShirts, ...productsTrousers, ...productOutwear]
 
 const ShopContextProvider = (props: ShopContextProviderProps) => {
     const [cartItems, setCartItems] = useState<Cart>(getDefaultItem(allProducts));

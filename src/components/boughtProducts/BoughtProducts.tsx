@@ -1,11 +1,11 @@
 import styles from './BoughtProducts.module.css'
-import { productsHoody, productsTShirts, productsTrousers } from "../../products"
+import { productOutwear, productsHoody, productsTShirts, productsTrousers } from "../../products"
 import { ShopContext } from "../context/ShopContext";
 import { useContext } from "react";
 import BoughtItem from './BoughtItem';
 import { Link } from 'react-router-dom';
 
-const allProducts = [...productsHoody, ...productsTShirts, ...productsTrousers]
+const allProducts = [...productsHoody, ...productsTShirts, ...productsTrousers, ...productOutwear]
 
 
 const BoughtProducts = () => {
@@ -22,7 +22,7 @@ const BoughtProducts = () => {
     function getTotalAmount() {
       let totalAmount = 0
       for (let item in cartItems) {
-        if (cartItems[item] > 0) {
+        if (cartItems[item] !== 0) {
           let findItem = allProducts.find((product) => product.id === Number(item))
           if (findItem) {
              totalAmount += cartItems[item] * findItem.price
@@ -41,9 +41,9 @@ const BoughtProducts = () => {
             {totalAmount > 0 ? <h1>Товари у кошику</h1> : <h1>Кошик пустий</h1>}
 
             <div className={styles.itemsContainer}>
-                {allProducts.map((product) => {
+                {allProducts.map((product,index) => {
                         if (cartItems[product.id] !== 0) {
-                          return <BoughtItem data={product}></BoughtItem>
+                          return <BoughtItem key={index} data={product}></BoughtItem>
                         }
                 })}
             </div>
