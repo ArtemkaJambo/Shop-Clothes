@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.formOfRegister {
+    width: 400px;
+    height: 470px;
+    background-color:rgba(241, 241, 241, 0.9);
+    margin: 0 auto;
+    margin-top: 140px;
+    border-radius: 6px;
+}
+.formOfRegister h1 {
+    padding-left: 50px;
+    padding-top: 40px;
+}
+
+.input {
+    padding: 10px 0;
+}
+.formOfInput {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    justify-content: center;
+    margin: 0 auto;
+}
+.formOfInput input {
+    padding: 12px;
+    border-radius: 6px;
+    /* border: 1px solid grey; */
+    border: none;
+    background-color: #e3e3e3;
+    outline: none;
+}
+.regBtn {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+.regBtn:hover {
+    color: white;
+    background-color: black;
+    transition: 0.5s;
+}
+.existsAccount {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.existsAccount .login {
+    border-bottom: 2px solid rgb(13, 13, 209);
+    color: rgb(13, 13, 209);
+    /* font-size: 14px; */
+}
+.errorText {
+    color: red;
+}

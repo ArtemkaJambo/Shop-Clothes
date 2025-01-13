@@ -1,189 +1,243 @@
-import styles from './Moda.module.css'
-import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faXmark} from '@fortawesome/free-solid-svg-icons'
+// import styles from './Moda.module.css'
+// import { useEffect, useState } from 'react';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import {faXmark} from '@fortawesome/free-solid-svg-icons'
+// import axios from 'axios';
+// import { useNavigate } from 'react-router-dom';
 
-interface ModalProps {
-  modal: boolean;
-  setModal: (value: boolean) => void;
-}
+// interface ModalProps {
+//   modal: boolean;
+//   setModal: (value: boolean) => void;
+// }
 
-const Modal: React.FC<ModalProps> = ({ modal, setModal }) => {
-  if (!modal) return null;
-  const [signIn, setSignIn] = useState(false); // return boolean
-  const [fullname, setFullname] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+// const Modal: React.FC<ModalProps> = ({ modal, setModal }) => {
+//   if (!modal) return null;
+//   const [values, setValues] = useState({
+//     username: '',
+//     email: '',
+//     password: ''
+//   });
 
-  const [fullnameError, setFullnameError] = useState('');
-  const [emailError, setEmailError] = useState('');
-  const [passwordError, setPasswordError] = useState('');
+//   const [values2, setValues2] = useState({
+//     email2: '',
+//     password2: ''
+//   });
 
-  // signIn section
-  const [emailSignIn, setEmailSignIn] = useState('');
-  const [passwordSignIn, setPasswordSignIn] = useState('');
-  const [emailSignInError, setEmailSignInError] = useState('');
-  const [passwordSignInError, setPasswordSignInError] = useState('');
+//   const [errors, setErrors] = useState<Record<string, string>>({});
+//   const [signIn, setSignIn] = useState(false); // return boolean
 
-  function clearInputsSignIn() {
-    setEmailSignIn('')
-    setPasswordSignIn('')
-    setEmailSignInError('')
-    setPasswordSignInError('')
-  }
+//   const navigate = useNavigate()
 
-  function clearInputsSignUp() {
-    setFullname('')
-    setPassword('')
-    setEmail('')
-  }
+//   const fetchUser = async () => {
+//     try {
+//       const token = localStorage.getItem('token')
+//  if (!token) {
+//       console.log('No token found');
+//       return;
+//     }
+
+//       const response = await axios.get('http://localhost:3000/home', {
+//         headers: {
+//           Authorization: `Bearer ${token}`
+//         }
+//       })
+
+//       if (response.status === 200) {
+//         console.log('user authenticated: ', response.data);
+        
+//       }
+
+//     } catch (err) {
+//       console.log(err);
+//     }
+//   }
+
+//   useEffect(() => {
+//     fetchUser()
+//   }, [])
+
+//   function clearInputsSignIn() {
+//     setValues2({
+//       email2: '',
+//       password2: ''
+//     })
+//   }
+
+//   function clearInputsSignUp() {
+//      setValues({
+//       username: '',
+//       email: '',
+//       password: ''
+//     })
+//   }
 
 
-  function switchScreens(value: boolean) {
-    setSignIn(value)
-    if (value) {
-      clearInputsSignUp()
-    } else {
-      clearInputsSignIn()
-    }
-    }  
+// const onChangeFn = (e: React.ChangeEvent<HTMLInputElement>) => {
+//   const { name, value } = e.target;
 
-  function checkSignInInputs() {
+//   // Оновлення значень у values та values2
+//   setValues({ ...values, [name]: value });
+//   setValues2({ ...values2, [name]: value });
 
-    if (!passwordSignIn) {
-      setPasswordSignInError('Пароль обов\'язковий')
+//   setErrors((prevErrors) => {
+//     const newErrors = { ...prevErrors };
 
-    }
-    
-    if (!emailSignIn) {
-      setEmailSignInError('Е-Пошта обов\'язкова')
-    }
+//     if (value.trim() !== '') {
+//       delete newErrors[name];
+//     }
+//     if (name in values2 && value.trim() !== '') {
+//       delete newErrors[name];
+//     }
 
-    if (emailSignIn && passwordSignIn) {
-      alert('Ви зареєструвались!')
-    }
-  }
+//     return newErrors;
+//   });
+// };
 
-  function checkCorrentInput() {
+//   function switchScreens(value: boolean) {
+//     setSignIn(value)
+//     if (value) {
+//       clearInputsSignUp()
+//     } else {
+//       clearInputsSignIn()
+//     }
+//     }  
 
-    if (!fullname) {
-      setFullnameError('Ім\'я та прізвище обов\'язкові')
-    }
-    if (!email) {
-      setEmailError('Е-Пошта обов\'язкова')
+//   const checkSignInInputs = async () => {
+//      const newErrors = {} as Record<string, string>;
 
-    }
-    if (!password) {
-      setPasswordError('Пароль обов\'язковий')
-    }
-    
-    if (fullname && email && password) {
-      alert('Ви зареєструвались!')
-    }
-  }
+//   if (!values2.email2) {
+//     newErrors.email2 = "Е-Пошта обов'язкова";
+//   }
 
-  function removeFullNameError(e: React.ChangeEvent<HTMLInputElement>){
-    setFullname(e.target.value)
+//   if (!values2.password2) {
+//     newErrors.password2 = "Пароль обов'язковий";
+//   }
 
-    if (e.target.value !== '') {
-      setFullnameError('')
-    }
-  }
-
-  function removeEmailError(e: React.ChangeEvent<HTMLInputElement>) {
-    setEmail(e.target.value)
-    
-    if (e.target.value !== '') {
-      setEmailError('')
-    }
-  }
-  function removePasswordError(e: React.ChangeEvent<HTMLInputElement>) {
-    setPassword(e.target.value)
-    
-    if (e.target.value !== '') {
-      setPasswordError('')
-    }
-  }
-
-  function removeEmailErrorSignIn(e: React.ChangeEvent<HTMLInputElement>) {
-    setEmailSignIn(e.target.value)
-
-    if (e.target.value !== '') {
-      setEmailSignInError('')
-    }
-  }
-
-  function removePasswordErrorSignIn(e: React.ChangeEvent<HTMLInputElement>) {
-      setPasswordSignIn(e.target.value)
+//     setErrors(newErrors);
+//     try {
+//       const response = await axios.post('http://localhost:3000/login', values)
+//       navigate('/home')
       
-      if (e.target.value !== '') {
-        setPasswordSignInError('')
-      }
+//       if (response.status === 200) {
+//         localStorage.setItem('token', response.data.token)
+//         navigate('/register')
+//       }
+//     } catch (err) {
+//       console.log('There is an error in value2', err);
+      
+//     }
+//   }
 
-  }
+//   const checkCorrentInput = async () => {
 
-  return (
-    <div 
-      className={styles.modalScreen}  onClick={() => setModal(false)}   >
-      <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-         <FontAwesomeIcon icon={faXmark} className={styles.closeModal} onClick={() => setModal(false)} />
-              <div className={styles.register}>
-                <button onClick={() => switchScreens(false)} className={signIn === false ? `${styles.activeSignIn}` : ' '}>Вхід</button>
-                <button onClick={() => switchScreens(true)} className={signIn === true ? `${styles.activeSignIn}` : ' '}>Реєструватись</button>
-              </div>
-              {signIn === true ? 
-            <form className={styles.form}>
-                <div className={styles.inputs}>
-                    <div className={styles.inputItem}>
-                        <p>Імя та <br /> Прізвище</p>
-                        <input type="text" value={fullname}
-                         onChange={removeFullNameError} 
-                         />
-                         {fullnameError ? <p className={styles.errorText}>{fullnameError}</p> : ''}
-                    </div>
+//   const newErrors = {} as Record<string, string>;
+
+//     if (!values.username) {
+//       newErrors.username = "Ім'я та прізвище обов'язкові";
+//     }
+//     if (!values.email) {
+//       newErrors.email = "Е-Пошта обов'язкова";
+//     }
+
+//     if (!values.password) {
+//       newErrors.password = "Пароль обов'язковий";
+//     }
+
+//   setErrors(newErrors);
+//     try {
+
+//       const response = await axios.post('http://localhost:3000', values)
+      
+//       setValues({
+//         username: '',
+//         email: '',
+//         password: ''
+//         })
+      
+//       if (response.status === 201) {
+//         setModal(false)
+//       }
+
+ 
+//     } catch (err) {
+//       console.log(err); 
+//     }
+ 
+      
+//   }
+  
+//   return (
+//     <div 
+//       className={styles.modalScreen}  onClick={() => setModal(false)}   >
+//       <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+//          <FontAwesomeIcon icon={faXmark} className={styles.closeModal} onClick={() => setModal(false)} />
+//               <div className={styles.register}>
+//                 <button onClick={() => switchScreens(false)} className={signIn === false ? `${styles.activeSignIn}` : ' '}>Вхід</button>
+//                 <button onClick={() => switchScreens(true)} className={signIn === true ? `${styles.activeSignIn}` : ' '}>Реєструватись</button>
+//               </div>
+//               {signIn === true ? 
+//             <form className={styles.form} onSubmit={checkCorrentInput}>
+//                 <div className={styles.inputs}>
+//                     <div className={styles.inputItem}>
+//                         <p>Імя та <br /> Прізвище</p>
+//                 <input type="text"
+//                   value={values.username}
+//                   onChange={onChangeFn} 
+//                   name='username'
+//                 />
+//               {errors.username && <p className={styles.errorText}>{errors.username}</p>}
+//                     </div>
                     
-                    <div className={styles.inputItem}>
-                        <p>Е-Пошта</p>
-                        <input type="email"
-                        value={email}
-                        onChange={removeEmailError}
-                        />
-                        {emailError ? <p className={styles.errorText}>{emailError}</p> : ''}
-                    </div>
-                    <div className={styles.inputItem}>
-                        <p>Пароль</p>
-                        <input type="password"
-                        value={password}
-                        onChange={removePasswordError}
-                        />
-                        {passwordError ? <p className={styles.errorText}>{passwordError}</p> : ''}
-                    </div>
-                </div>
-            </form>
+//                     <div className={styles.inputItem}>
+//                         <p>Е-Пошта</p>
+//                         <input type="email"
+//                         value={values.email}
+//                   onChange={onChangeFn}
+//                   name='email'
+//                 />
+//                         {errors.email ? <p className={styles.errorText}>{errors.email}</p> : ''}
+//                     </div>
+//                     <div className={styles.inputItem}>
+//                         <p>Пароль</p>
+//                         <input type="password"
+//                         value={values.password}
+//                   onChange={onChangeFn}
+//                   name='password'
+                  
+//                 />
+//                 {errors.password ? <p className={styles.errorText}>{errors.password}</p> : ''}
+//                     </div>
+//                 </div>
+//             </form>
               
-              : 
-              <form className={styles.form}>
-                <div className={styles.inputs}>
-                    <div className={styles.inputItem}>
-                        <p>Е-Пошта</p>
-                        <input type="email" value={emailSignIn} onChange={removeEmailErrorSignIn} />
-                        {emailSignInError ? <p className={styles.errorText} >{emailSignInError}</p> : ''}
-                    </div>
-                    <div className={styles.inputItem}>
-                        <p>Пароль</p>
-                        <input type="password" value={passwordSignIn} onChange={removePasswordErrorSignIn} />
-                        {passwordSignInError ? <p className={styles.errorText}>{passwordSignInError}</p> : ''}
-                    </div>
-                </div>
-            </form>
-              }
-        <button className={styles.btnRegister}  
-      onClick={signIn ? checkCorrentInput : checkSignInInputs }>
-          {signIn ? 'Зареєструватись' : 'Увійти'}</button>
-      </div>
-    </div>
-  );
-};
+//               :  // Sign In
+//               <form className={styles.form}>
+//                 <div className={styles.inputs}>
+//                     <div className={styles.inputItem}>
+//                         <p>Е-Пошта</p>
+//                 <input type="email" value={values2.email2} onChange={onChangeFn}
+//                   name='email2'
+//                 />
+//                         {errors.email2 ? <p className={styles.errorText}>{errors.email2}</p> : ''}
+//                     </div>
+//                     <div className={styles.inputItem}>
+//                         <p>Пароль</p>
+//                 <input type="password" value={values2.password2} onChange={onChangeFn}
+//                   name='password2'
+//                 />
+//                 {errors.password2 ? <p className={styles.errorText}>{errors.password2}</p> : ''}
 
-export default Modal;
+//                     </div>
+//                 </div>
+//             </form>
+//               }
+//         <button className={styles.btnRegister}  
+//       onClick={signIn ? checkCorrentInput : checkSignInInputs }>
+//           {signIn ? 'Зареєструватись' : 'Увійти'}</button>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Modal;
 

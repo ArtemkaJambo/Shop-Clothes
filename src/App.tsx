@@ -15,6 +15,9 @@ import Outwear from "./components/Catalogue/Outwear/Outwear"
 import Hoody from "./components/Catalogue/Hoody/Hoody"
 import TShirts from "./components/Catalogue/TShirts/TShirts"
 import Trousers from "./components/Catalogue/Trousers/Trousers"
+import Register from "./components/Register/Register"
+import Login from "./components/Register/Login"
+import Home from "./components/Register/Home"
 
 const App = () => {
   return (
@@ -44,6 +47,10 @@ const App = () => {
                 <Route path="/exchange" element={<Exchange></Exchange>}></Route>
                 <Route path="/care" element={<Care></Care>}></Route>
             {/* Footer */}
+
+          <Route path="/register" element={<Register></Register>}></Route>
+          <Route path="/login" element={<Login></Login>}></Route>
+          <Route path="/home" element={<Home></Home>}></Route>
 
           </Routes>
           <Footer />

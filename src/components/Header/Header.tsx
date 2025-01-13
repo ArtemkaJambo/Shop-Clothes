@@ -7,7 +7,7 @@ import outwearIcon from '../../assets/images/icons/outwear.webp'
 import hoodyIcon from '../../assets/images/icons/hoody.webp'
 import TShirtIcon from '../../assets/images/icons/TShirt.webp'
 import TrousersIcon from '../../assets/images/icons/Trousers.webp'
-import Modal from '../Modal/Modal'
+// import Modal from '../Modal/Modal'
 
 const Header = () => {
   const [modal, setModal] = useState(false);
@@ -38,11 +38,14 @@ const Header = () => {
                   <li><img src={TrousersIcon} alt="" />Штани</li>
                 </Link>
                 </ul>              
-              </li> 
-              <FontAwesomeIcon onClick={() => setModal(true)} className={styles.icon} icon={faPerson} />
-            <Modal  modal={modal} setModal={setModal}>
+        </li> 
+        <Link to='/register'>
+              <FontAwesomeIcon  className={styles.icon} icon={faPerson} />
+              {/* <FontAwesomeIcon onClick={() => setModal(true)} className={styles.icon} icon={faPerson} /> */}
+        </Link>
+            {/* <Modal  modal={modal} setModal={setModal} > */}
 
-            </Modal>
+            {/* </Modal> */}
 
             <Link to='/boughtgoods'>
               <FontAwesomeIcon className={styles.icon} icon={faBasketShopping} />

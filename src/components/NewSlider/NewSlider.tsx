@@ -41,6 +41,8 @@ const NewSlider = () => {
         }
     }
 
+    
+
     return (
         <section className={styles.slider}>
             <h1>НОВИНКИ</h1>
